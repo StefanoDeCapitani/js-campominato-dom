@@ -1,0 +1,166 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 0 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header__left,
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right {
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.header__logo {
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.header__title {
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+#level-select {
+  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+}
+
+#level-select {
+  border: 1px solid black;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.btn--play {
+  border: none;
+  background: rgb(155, 183, 235);
+  border: 3px solid cornflowerblue;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: aquamarine;
+  display: grid;
+  place-items: center;
+}
+
+.minefield-container {
+  min-width: 300px;
+  width: 80%;
+  max-width: 450px;
+}
+
+.ratio {
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.cell {
+  background-color: lightgray;
+  box-shadow: 5px 5px 0 white inset;
+  position: relative;
+  cursor: pointer;
+}
+
+.minefield,
+.cell-content {
+  position: absolute;
+}
+
+.cell-content {
+  background-color: rgb(233, 233, 233);
+  inset: 5px;
+  display: grid;
+  place-content: center;
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.active {
+  background-color: cornflowerblue;
+  color: white;
+  box-shadow: 5px 5px 0 rgb(193, 217, 253) inset;
+}
+
+.bomb.active {
+  background-color: crimson;
+  box-shadow: 5px 5px 0 rgb(233, 144, 162) inset;
+}
+
+.active .cell-content {
+  background-color: rgb(155, 183, 235);
+}
+
+.bomb.active .cell-content {
+  background-color: rgb(218, 84, 111);
+}
+
+.minefield {
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 10fr);
+  gap: 1px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.footer {
+  flex: 0 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 1rem;
+}
+
+.footer__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.score {
+  width: 150px;
+}
+
+.winner {
+  width: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer,
+  .header {
+    justify-content: center;
+  }
+
+  .footer__right,
+  .header__right {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Campo Minato</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__left">
+        <img
+          src="img/Logo boolean.png"
+          class="header__logo"
+          alt="Boolean logo"
+        />
+        <h1 class="header__title">Campo Minato: la Griglia</h1>
+      </div>
+      <div class="header__right">
+        <label for="level-select">Difficoltà: </label>
+        <select id="level-select">
+          <option value="0" selected>Easy</option>
+          <option value="1">Medium</option>
+          <option value="2">Hard</option>
+        </select>
+        <button class="btn--play">Play</button>
+      </div>
+    </header>
+    <main class="main">
+      <div class="minefield-container">
+        <div class="ratio">
+          <div class="minefield"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__left">
+        <p>Made with &hearts; by <a href="#">Boolean</a></p>
+      </div>
+      <div class="footer__right">
+        <p class="score"></p>
+        <h3 class="winner"></h3>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
